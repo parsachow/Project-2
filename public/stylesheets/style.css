@@ -19,6 +19,21 @@
   margin-top: -5px;
 }
 
+html, body {
+  height: 100%;
+}
+
+.bg-img {
+  background-image: url('https://i.etsystatic.com/37459064/r/il/d5373d/4191154751/il_794xN.4191154751_s39i.jpg');
+  background-position: center;
+  background-repeat: no-repeat;  
+  background-size: cover;
+  
+}
+
+span {
+  color: darkgray;
+}
 
 .sidenav {
   height: 100%; 
@@ -64,7 +79,10 @@ h5 {
 }
 
 h5 > a {
-  color: cadetblue;
+  color: #033f50;
+}
+h5 > a:hover {
+  color: #f1f1f1;
 }
 
 h3 {
@@ -73,9 +91,8 @@ h3 {
 
 }
 
-table > th {
-  text-align: center;
-  font-size: 15px;
-  color: #033f50;
+#list {
+  width: 50%;
+  margin: 0 auto;
 }
 

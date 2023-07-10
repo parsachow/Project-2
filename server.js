@@ -8,18 +8,21 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
 const methodOverride = require('method-override');
-const indexRoutes = require('./routes/index');
 
 
-// create the Express app
-const app = express();
 
+require('dotenv').config();
 // connect to the MongoDB with mongoose
 require('./config/database');
 // configure Passport
 require('./config/passport');
 
+const indexRoutes = require('./routes/index');
+const booksRoutes = require('./routes/books');
+//const reviewRoutes = require('./routes/reviews');
 
+// create the Express app
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -51,6 +54,8 @@ app.use(function (req, res, next) {
 
 // mount all routes with appropriate base paths
 app.use('/', indexRoutes);
+app.use('/books', booksRoutes)
+//app.use('/', reviewRoutes)
 
 
 // invalid request, send 404 page

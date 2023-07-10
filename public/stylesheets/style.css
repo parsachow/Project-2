@@ -18,3 +18,64 @@
 .collection-item form {
   margin-top: -5px;
 }
+
+
+.sidenav {
+  height: 100%; 
+  width: 0; 
+  position: fixed;
+  z-index: 1; 
+  top: 0; 
+  left: 0;
+  background-color: #033f50; 
+  overflow-x: hidden; 
+  padding-top: 60px; 
+  transition: 0.5s; 
+}
+
+.sidenav > a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #a9dceb;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 40vmin;
+}
+
+h5 {
+  text-align: center;
+}
+
+h5 > a {
+  color: cadetblue;
+}
+
+h3 {
+  text-align: center;
+  color: #033f50; 
+
+}
+
+table > th {
+  text-align: center;
+  font-size: 15px;
+  color: #033f50;
+}
+

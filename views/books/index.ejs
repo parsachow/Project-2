@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>
+
+<h3>All Books List</h3>
+
+<table id="bookList"> 
+    <thead>
+        <tr>
+            <th>Author Name</th>
+            <th>Book Name</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    <% books.forEach(b => { %>
+       <tr>
+        <td><%= b.authorName %></td>
+        <td><%= b.bookTitle %></td>
+        <td><a href="/books/<%= b._id %>">Details</a></td>
+       </tr> 
+   <% }); %>
+    </tbody>
+</table>
+
+
+<%- include('../partials/footer') %>

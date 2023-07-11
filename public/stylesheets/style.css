@@ -108,9 +108,15 @@ h3 {
 }
 
 #new-book-form > input {
-  width: 20vmin;
+  width: 25vmin;
   margin: 1vmin;
   border-radius: 5vmin;
+}
+
+#new-book-form > button {
+  width: 10vmin;
+  margin-top: 15px;
+  border-radius: 5px;
 }
 
 

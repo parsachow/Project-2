@@ -44,11 +44,12 @@ const bookSchema = new mongoose.Schema({
     },
     adaptation: {
         type: Boolean,
-        default: false
+        default: true
     },
     genre: {
         type: String,
-        enum: ['Mystery', 'Sci-Fi', 'Horror', 'Fantasy', 'Urban Fantasy', 'Crime', 'Suspense']
+        enum: ['Mystery', 'Sci-Fi', 'Horror', 'Fantasy', 'Urban Fantasy', 'Crime', 'Suspense'],
+        default: 'Urban Fantasy',
     },
     //embeded schema
     reviews: [reviewSchema]

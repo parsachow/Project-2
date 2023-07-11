@@ -2,7 +2,7 @@
 
 <h3>Add A Book</h3>
 
-<form id="new-book-form" action="/books" method="POST">
+<form id="new-book-form" action="/books/index" method="POST">
 <label>Author Name</label>
 <input type="text" name="authorName">
 <label>Book Title</label>
@@ -10,7 +10,7 @@
 <label>Release Year</label>
 <input type="text" name="releaseYear">
 <label>TV/Movie Adaptation</label>
-<input type="checkbox" name="adaptation">
+<input type="checkbox" name="adaptation" checked>
 <label>Genre</label>
 <select name="genre">
     <option value="Mystery">Mystery</option>
@@ -21,7 +21,7 @@
     <option value="Crime">Crime</option>
     <option value="Suspense">Suspense</option>
 </select>
-<input type="submit" value="Add Book">
+<button type="submit">Add Book</button>
 </form>
 
 <%- include('../partials/footer') %>

@@ -2,7 +2,12 @@ const Book = require('../models/book');
 
 
 module.exports = {
-    index
+    index,
+    newBook
+}
+
+function newBook(req, res){
+    res.render('books/new', { title: 'Add Book' })
 }
 
 async function index(req, res){

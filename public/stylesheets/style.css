@@ -88,6 +88,7 @@ h5 > a:hover {
 h3 {
   text-align: center;
   color: #033f50; 
+  font-size: 10vmin;
 
 }
 
@@ -95,4 +96,23 @@ h3 {
   width: 50%;
   margin: 0 auto;
 }
+
+#new-book-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10vmin;
+  font-size: 17px;
+  color: #033f50;
+  font-weight: bold;
+}
+
+#new-book-form > input {
+  width: 20vmin;
+  margin: 1vmin;
+  border-radius: 5vmin;
+}
+
+
+
 

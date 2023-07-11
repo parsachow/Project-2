@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 //review schema/Model 
 const reviewSchema = new Schema({
     
-    form: {
+    textForm: {
         type: String,
         required: true
     },
@@ -42,7 +42,7 @@ const bookSchema = new mongoose.Schema({
         min: 1900,
         max: 2030
     },
-    movieAdaptation: {
+    adaptation: {
         type: Boolean,
         default: false
     },
@@ -51,7 +51,7 @@ const bookSchema = new mongoose.Schema({
         enum: ['Mystery', 'Sci-Fi', 'Horror', 'Fantasy', 'Urban Fantasy', 'Crime', 'Suspense']
     },
     //embeded schema
-    Reviews: [reviewSchema]
+    reviews: [reviewSchema]
 }, {
     timestamps: true
 });

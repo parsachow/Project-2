@@ -1,0 +1,33 @@
+<%- include('../partials/header') %>
+
+<h3>Book Details</h3>
+
+<section id="show-list">
+    <div>Author: <%= book.authorName  %> </div>
+    
+    <div>Title: <%= book.bookTitle %></div>
+    
+    <div>Published: <%= book.releaseYear %></div>
+    
+    <div>TV/Movie Adaptation: <%= book.adaptation ? 'Yes' : 'None' %></div>
+    
+    <div>Genre: <%= book.genre %></div>
+    
+</section>
+
+<section id="review">
+
+    <h4>Reviews</h4>
+    <% if (user) { >%
+        
+        <form id="review-form" method="POST" action="/books/<%= book._id %>/reviews">
+
+
+   <% } %>
+
+   
+    </form>
+
+</section>
+
+<%- include('../partials/footer') %>

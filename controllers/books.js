@@ -4,7 +4,20 @@ const Book = require('../models/book');
 module.exports = {
     index,
     newBook,
-    create
+    create,
+    show
+}
+
+async function show(req, res){
+
+    try{
+
+    const bookDetails = await Book.findById(req.params.id);
+    res.render('books/show', { book: bookDetails });
+
+    }catch(err){
+        console.log(err)
+    }
 }
 
 async function create(req, res){

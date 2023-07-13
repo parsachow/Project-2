@@ -25,7 +25,7 @@ const reviewSchema = new Schema({
 
 }, {
     timestamps: true
-})
+}) 
 
 //book schema/model
 const bookSchema = new mongoose.Schema({

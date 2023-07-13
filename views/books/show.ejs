@@ -15,19 +15,35 @@
     
 </section>
 
+
+<!--review section-->
 <section id="review">
 
     <h4>Reviews</h4>
     <% if (user) { >%
         
         <form id="review-form" method="POST" action="/books/<%= book._id %>/reviews">
+            <label>Review
+            <textarea name="textForm"></textarea>
+            </label><br>
+            <label>Rated
+            <select name="rated">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3" selected>3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            </label><br>
+            <button type="submit">Add Review</button>
+        </form>
+    <% } %>   
 
 
-   <% } %>
-
-   
-    </form>
-
+   <% if (book.reviews.length) { %>
+     let total = 0
+  <% } %>
 </section>
+
 
 <%- include('../partials/footer') %>

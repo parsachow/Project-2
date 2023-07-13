@@ -20,7 +20,7 @@
 <section id="review">
 
     <h4>Reviews</h4>
-    <% if (user) { >%
+    <% if (user) { %>
         
         <form id="review-form" method="POST" action="/books/<%= book._id %>/reviews">
             <label>Review
@@ -40,9 +40,39 @@
     <% } %>   
 
 
-   <% if (book.reviews.length) { %>
-     let total = 0
-  <% } %>
+    <% if (book.reviews.length) { %>
+        <table>
+            <thead>
+                <tr>
+                  <th>User</th>
+                  <th>Review</th>
+                  <th>Rating</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+         <tbody>
+            <% let total = 0 %>
+            <% book.reviews.forEach(function(br) { %>
+                <% total += br.rated %>
+                <tr>
+                    <td><img alt="avatar" src="<%= br.userAvatar %>" referrerpolicy="no-referrer" ><%= br.userName %></td>
+                <td><%= br.textForm %></td>
+                <td><%= br.rated %></td>
+                <td><%= br.createdAt.toLocaleDateString() %></td>
+                <td>
+                    <% if (user && user._id.equals(br.user)) { %>
+                        <form action="/reviews/<%= br._id %>?_method=DELETE" method="POST">
+                        <button type="submit">delete</button>
+                        </form>
+                    <% } %>
+                </td>
+                
+                </tr>
+        <% }) %>
+        <% } %>
+        
+</tbody>
+</table>
 </section>
 
 

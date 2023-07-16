@@ -1,0 +1,14 @@
+<%- include('../partials/header') %>
+
+<h4>Update Review</h4>
+
+<td>
+    
+        <form action="/books/<%= bookId %>/reviews/<%= review._id %>?_method=PUT" method="POST">
+            <textarea name="textForm" value="<%= review.textForm %>"><%= review.textForm %></textarea>
+          <button type="submit">update</button>
+        </form>
+   
+</td>
+
+<%- include('../partials/footer') %>

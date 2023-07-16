@@ -3,24 +3,60 @@ const Book = require('../models/book');
 
 module.exports = {
     create,
-    deleteReview,
-    updateReview
+    update,
+    edit,
+    deleteReview
+    
+    
 }
 
-async function updateReview(req, res){
+async function edit(req, res){
+    console.log("edit()", req.params.bookId)
+    try{
+    const book = await Book.findById(req.params.bookId);
+    
+    const review = book.reviews.id(req.params.id)
+        console.log(review)
+    res.render('reviews/edit', { review, bookId:req.params.bookId });
+
+    }catch(err){
+        res.send(err)
+    }
+}
+
+
+async function update(req, res){
+    
     try{
         //findOneAndUpdate()???
-        const book = await Book.findOne({
-            'reviews._id': req.params.id,
-            'reviews.user': req.user._id
-        })
-        if(!book) return res.redirect('/books/index');
-        book.reviews.text = req.body.text;
+
+        //not going to work for embeded schema, will work for ref
+        const book = await Book.findById(req.params.bookId);
+        console.log(book, "book")
+        
+        
+        console.log(book, "book", req.params.id)
+        const review = book.reviews.id(req.params.id);
+        console.log(review);
+        if(!review.user._id.equals(req.user._id)) return res.redirect(`/books/${book._id}`);
+        review.textForm = req.body.textForm;
+        
+        
+
+        
+        //book.text = req.body.text;
+        //book.reviews.push(req.params.id);
+
         await book.save();
+        
         res.redirect(`/books/${book._id}`)
+        
+        
     }catch(err){
         res.send(err);
     }
+
+    //console.log(req.body)
 }
 
 

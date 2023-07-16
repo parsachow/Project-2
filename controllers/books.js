@@ -44,6 +44,6 @@ function newBook(req, res){
 async function index(req, res){
     //find all the books that have been added to the DB
     const books = await Book.find({})
-    console.log(books)
+    //console.log(books)
     res.render('books/index', { books })
 }

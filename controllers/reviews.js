@@ -30,7 +30,8 @@ async function update(req, res){
     try{
         //findOneAndUpdate()???
 
-        //not going to work for embeded schema, will work for ref
+        //not going to work for embeded schema, will work for ref-findOnandUpdate will work for ref
+        //for an embeded schema find pne and update wont work bc we need the bookid and review id 
         const book = await Book.findById(req.params.bookId);
         console.log(book, "book")
         

@@ -3,11 +3,13 @@
 <h3>List of Books</h3>
 
 <div id="list">
-<table id="bookList"> 
+<table class="center"> 
     <thead>
         <tr>
             <th>Author Name</th>
             <th>Book Title</th>
+            <th>Genre</th>
+            <th>Learn More</th>
         </tr>
     </thead>
 
@@ -16,6 +18,7 @@
        <tr>
         <td><%= b.authorName %></td>
         <td><%= b.bookTitle %></td>
+        <td><%= b.genre %></td>
         <td><a href="/books/<%= b._id %>">Details</a></td>
        </tr> 
    <% }); %>

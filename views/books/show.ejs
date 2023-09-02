@@ -41,13 +41,15 @@
 
 
     <% if (book.reviews.length) { %>
-        <table>
+        <table class="center">
             <thead>
                 <tr>
                   <th>User</th>
                   <th>Review</th>
                   <th>Rating</th>
                   <th>Date</th>
+                  <th>Update Review</th>
+                  <th>Delete Review</th>
                 </tr>
               </thead>
          <tbody>
@@ -55,20 +57,21 @@
             <% book.reviews.forEach(function(br) { %>
                 <% total += br.rated %>
                 <tr>
-                    <td><img alt="avatar" src="<%= br.userAvatar %>" referrerpolicy="no-referrer" ><%= br.userName %></td>
-                <td><%= br.textForm %></td>
-                <td><%= br.rated %></td>
-                <td><%= br.createdAt.toLocaleDateString() %></td>
-                <td>
-                    <% if (user && user._id.equals(br.user)) { %>
-                        <form action="/reviews/<%= br._id %>?_method=DELETE" method="POST">
-                        <button type="submit">delete</button>
-                        </form>
-                    <% } %>
-                </td>
-                <td><a href= "<%= book._id %>/reviews/<%= br._id %>/edit">Edit Review</a></td>
+                    <td id="user-avatar"><img alt="avatar" src="<%= br.userAvatar %>" referrerpolicy="no-referrer" ><%= br.userName %></td>
+                    <td><%= br.textForm %></td>
+                    <td><%= br.rated %></td>
+                    <td><%= br.createdAt.toLocaleDateString() %></td>
+                    <td><button id="review-btn"><a href= "<%= book._id %>/reviews/<%= br._id %>/edit"></a>Update</button> 
+                    </td>
+                    <td>
+                        <% if (user && user._id.equals(br.user)) { %>
+                            <form action="/reviews/<%= br._id %>?_method=DELETE" method="POST">
+                            <button id="review-btn" type="submit" style="background-color: rgb(246, 61, 61);">delete</button>
+                            </form>
+                        <% } %>
+                    </td>
                 </tr>
-        <% }) %>
+            <% }) %>
         <% } %>
         
 </tbody>
